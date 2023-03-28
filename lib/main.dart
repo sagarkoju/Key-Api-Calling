@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:apicalling/details.dart';
 import 'package:apicalling/model/service_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -78,7 +79,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                     borderRadius: BorderRadius.circular(5)),
                                 child: ListTile(
                                   leading: const SizedBox(),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ServicesDetailsScreen(
+                                                  datum: dataList,
+                                                )));
+                                  },
                                   title: Text(
                                     data,
                                     style: TextStyle(color: Colors.black),
